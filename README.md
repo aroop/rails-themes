@@ -16,10 +16,13 @@ It expects the following folder structure.
       public/
         themes/
           [theme_name]/
-            templates/
-            images/
-            javascripts/
-            stylesheets/
+            views/
+              layout/
+              ...
+            assets/
+              images/
+              javascripts/
+              stylesheets/
 
 You specify which theme to use in your controller by using 
 the declarative `theme` syntax.
@@ -40,4 +43,4 @@ You can also defer the theme lookup to a controller method:
 
     end
 
-Copyright © 2010 Francesc Esplugas, released under the MIT license
+Copyright © 2011 Francesc Esplugas, released under the MIT license
