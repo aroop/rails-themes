@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
-  s.name = 'themes'
+  s.name = 'rails-themes'
   s.version = '1.0.0'
   s.author = 'Francesc Esplugas'
   s.email = 'contact@francescesplugas.com'
-  s.summary = 'themes'
+  s.summary = 'Macros to have themes on Rails applications'
 
   s.add_dependency('rails', '>= 3.0.0')
 

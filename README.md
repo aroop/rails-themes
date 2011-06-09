@@ -1,4 +1,4 @@
-# Themes
+# Rails Themes
 
 Plugin to provide theme support for Rails applications.
 
@@ -6,7 +6,8 @@ Plugin to provide theme support for Rails applications.
 
 Add to your `Gemfile`:
 
-    gem 'themes', :git => 'https://github.com/fesplugas/rails-themes.git'
+    gem 'rails-themes'
+    # gem 'rails-themes', :git => 'https://github.com/fesplugas/rails-themes.git'
 
 ## Usage
 
