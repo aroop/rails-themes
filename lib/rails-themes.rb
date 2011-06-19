@@ -26,8 +26,15 @@ ActionController::Base.class_eval do
 
   def add_theme_path
     current_theme
-    new_path = "#{Rails.public_path}/themes/#{@active_theme}/views"
-    self.prepend_view_path(new_path)
+    theme_path = "#{Rails.root}/vendor/themes"
+
+    Rails.application.assets.paths.reject! { |d| d.match(theme_path) }
+    Rails.application.assets.paths.unshift("#{theme_path}/#{@active_theme}/assets/javascripts")
+    Rails.application.assets.paths.unshift("#{theme_path}/#{@active_theme}/assets/images")
+    Rails.application.assets.paths.unshift("#{theme_path}/#{@active_theme}/assets/stylesheets")
+
+    self.prepend_view_path("#{theme_path}/#{@active_theme}/views")
+
     return true
   end
 
