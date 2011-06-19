@@ -7,14 +7,14 @@ Plugin to provide theme support for Rails applications.
 Add to your `Gemfile`:
 
     gem 'rails-themes'
-    # gem 'rails-themes', :git => 'https://github.com/fesplugas/rails-themes.git'
+    # gem 'rails-themes', :git => 'https://github.com/fesplugas/rails-themes.git', :branch => 'rails31'
 
 ## Usage
 
 It expects the following folder structure.
 
     app_root/
-      public/
+      vendor/
         themes/
           [theme_name]/
             views/
@@ -25,8 +25,8 @@ It expects the following folder structure.
               javascripts/
               stylesheets/
 
-You specify which theme to use in your controller by using 
-the declarative `theme` syntax.
+You specify which theme to use in your controller by using the declarative
+`theme` syntax.
 
     class ApplicationController < ActionController::Base
       theme "theme_name"
