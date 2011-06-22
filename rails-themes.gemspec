@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'rails-themes'
-  s.version = '1.0.0'
+  s.version = '1.1.0'
   s.author = 'Francesc Esplugas'
   s.email = 'contact@francescesplugas.com'
   s.summary = 'Macros to have themes on Rails applications'
