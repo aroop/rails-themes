@@ -26,19 +26,30 @@ ActionController::Base.class_eval do
 
   def add_theme_path
     current_theme
-    new_path = "#{Rails.public_path}/themes/#{@active_theme}/views"
-    self.prepend_view_path(new_path)
-    return true
+    self.prepend_view_path(theme_views_path)
   end
 
   def current_theme
     theme = self.class.read_inheritable_attribute("theme")
 
-    @active_theme = case theme
-                    when Proc   then theme.call(self)
-                    when String then theme
-                    when Symbol then send(theme)
-                    end
+    @current_theme = case theme
+                     when Proc   then theme.call(self)
+                     when String then theme
+                     when Symbol then send(theme)
+                     end
   end
+
+  def theme_path
+    "#{Rails.public_path}/themes/#{current_theme}"
+  end
+
+  def theme_views_path
+    theme_path + "/views"
+  end
+
+  def theme_assets_path
+    "/themes/#{current_theme}/assets"
+  end
+  helper_method :theme_assets_path
 
 end
