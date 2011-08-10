@@ -28,10 +28,10 @@ ActionController::Base.class_eval do
     current_theme
     theme_path = "#{Rails.root}/vendor/themes"
 
-    Rails.application.assets.paths.reject! { |d| d.match(theme_path) }
-    Rails.application.assets.paths.unshift("#{theme_path}/#{@active_theme}/assets/javascripts")
-    Rails.application.assets.paths.unshift("#{theme_path}/#{@active_theme}/assets/images")
-    Rails.application.assets.paths.unshift("#{theme_path}/#{@active_theme}/assets/stylesheets")
+    Rails.application.assets.clear_matching_path(theme_path)
+    Rails.application.assets.prepend_path("#{theme_path}/#{@active_theme}/assets/javascripts")
+    Rails.application.assets.prepend_path("#{theme_path}/#{@active_theme}/assets/images")
+    Rails.application.assets.prepend_path("#{theme_path}/#{@active_theme}/assets/stylesheets")
 
     self.prepend_view_path("#{theme_path}/#{@active_theme}/views")
 
